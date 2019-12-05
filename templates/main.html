@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	</br></br>
+	<p>Jesteś w main</p>
+	<p>{{jakies_dane}}</p>
+	
+	{% for i in lista %}
+		<em><li>{{i}}v</li></em>
+	{% endfor%}
+
+	<div class="articles">
+		{% for i in lista2 %}
+		<div class=article>
+			<li>hihihi</li>
+		</div>
+		{% endfor%}
+	</div>
+	
+		
+	
+
+{% endblock %}

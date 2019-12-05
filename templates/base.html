@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>DemoBlog</title>
+	{% load static %} 
+	<link rel="stylesheet" href="{% static "styles/style.css" %}" title="Default Styles" media="screen" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="{% static "scripts/scripts.js" %}"></script> 
+</head>
+
+<body>
+	<div class="divNav">
+		<img src="{% static "image/logo_large.png" %}" alt="DemoBlog" > 
+		<div class=social-icons><i href="#" class="fa fa-facebook"></i></div>
+		<div class=social-icons><i href="#" class="fa fa-youtube"></i></div>
+		<div class=social-icons><i href="#" class="fa fa-instagram"></i></div>
+		<ul class="nav">
+	  		<li class="lineNav"><a class="aNav" href="#post">Strona Główna</a></li>
+	  		<li class="lineNav"><a class="aNav" href="#news">O filozofii</a></li>
+	 		<li class="lineNav"><a class="aNav" href="#contact">O programowaniu</a></li>
+	  		<li class="lineNav"><a class="aNav" href="#about">O mnie</a></li>
+	  		<li class="lineNav"><a class="aNav" href="#home">Szukaj</a></li>
+		</ul>
+	</div>
+	<!-- <header>
+		<br/>
+		<h1 id="quote"><span>Dwie rzeczy napełniają umysł coraz to nowym i wzmagającym się podziwem i czcią, im częściej i trwalej się nad nimi zastanawiamy: niebo gwiaździste nade mną i prawo moralne we mnie. </span></h1>
+	</header> -->
+	
+	
+	
+{% block content %}
+
+		replace it 
+{% endblock %}
+	<footer>
+		<div class="footer_image" id="foot">
+			
+		</div>
+	</footer>
+
+</body>
+
+</html>

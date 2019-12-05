@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<!-- {% load static %}  -->
+	<style>
+		#img_container{
+			background-image: url("{{obj.image.url}}");
+		}
+	</style>
+
+	<header>
+		
+		<div id="img_container">
+			<h1 id="title""><span>{{obj.title}} </span></h1>
+		</div>
+	</header>
+	<div class="post" id="post">
+		<!-- <h1> {{obj.title}}</h1> -->
+		
+		<p> {{obj.text}}</p>
+		<p id="date"> {{obj.date.day}}.{{obj.date.month}}.{{obj.date.year}}</p>
+	</div>
+{% endblock %}
