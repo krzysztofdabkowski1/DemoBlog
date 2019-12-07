@@ -3,11 +3,12 @@ from django.http import HttpResponse
 from .models import Post
 from .forms import PostForm
 
-def widok(request,*args, **kwargs):
+def post_list(request,*args, **kwargs):
+	obj=Post.objects.all().order_by('-date');
 	kontekst={
-		'jakies_dane':'super mega dane',
-		'lista':[12,34,45,56,67,87,90],
-		'lista2':range(1,8),
+		'first_front_obj':obj[0],
+		'front_obj':obj[1:3],
+		'obj':obj[3:]
 	}
 	return render(request,'main.html',kontekst)
 

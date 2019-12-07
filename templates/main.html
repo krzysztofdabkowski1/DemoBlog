@@ -1,23 +1,65 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	</br></br>
-	<p>Jesteś w main</p>
-	<p>{{jakies_dane}}</p>
-	
-	{% for i in lista %}
-		<em><li>{{i}}v</li></em>
-	{% endfor%}
+	<div class="main_container">
+		<div class="front_main_posts">
 
-	<div class="articles">
-		{% for i in lista2 %}
-		<div class=article>
-			<li>hihihi</li>
+			<div class="first_front_main_post_frame">
+				<a href="post/{{first_front_obj.slug}}">
+					<!-- <div class="first_front_main_post"> -->
+						
+						<div id="front_main_post_title">
+							<h1>{{first_front_obj.title}}</h1>
+							<div id="front_main_post_time">
+								<p class="main_post_date">{{first_front_obj.date.year}},{{first_front_obj.date.month}},{{first_front_obj.date.day}}</p>
+							</div>
+						</div>
+						<img src="{{first_front_obj.image.url}}" ></img>
+					<!-- </div> -->
+				</a>
+			</div>
+
+			{% for i in front_obj %}
+			
+				<div class="front_main_post_frame">
+					<a href="post/{{i.slug}}">
+						<!-- <div class="front_main_post"> -->
+							<div id="front_main_post_title">
+								<h1>{{i.title}}</h1>
+								<div id="front_main_post_time">
+									<p class="main_post_date">{{i.date.year}},{{i.date.month}},{{i.date.day}}</p>
+								</div>
+							</div>
+							<img src="{{i.image.url}}" ></img>
+						<!-- </div> -->
+					</a>
+				</div>
+			
+			{% endfor%}
 		</div>
-		{% endfor%}
-	</div>
-	
 		
+
+		<div class="main_posts">
+			{% for i in obj %}
+				<div class="main_post_frame">
+					<a href="post/{{i.slug}}">
+						<div class=main_post>
+							<div id="main_post_title">
+								<h2>{{i.title}}</h2>
+								<div id="main_post_time">
+									<p class="main_post_date">{{i.date.year}},{{i.date.month}},{{i.date.day}}</p>
+								</div>
+							</div>
+							<img src="{{i.image.url}}" ></img>
+						</div>
+					</a>
+				</div>
+			
+			{% endfor%}
+		</div>
+	</div>
+	{% load static %} 
+	<script type="text/javascript" src="{% static "scripts/date.js" %}"></script> 
 	
 
 {% endblock %}

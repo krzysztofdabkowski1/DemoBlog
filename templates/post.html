@@ -3,16 +3,16 @@
 {% block content %}
 	<!-- {% load static %}  -->
 	<style>
-		#img_container{
-			background-image: url("{{obj.image.url}}");
+		.img_container{
+			/*background-image: url("{{obj.image.url}}");*/
 		}
 	</style>
 
 	<header>
-		
-		<div id="img_container">
-			<h1 id="title""><span>{{obj.title}} </span></h1>
-		</div>
+		<h1 id="title""><span>{{obj.title}} </span></h1>
+		<i class="material-icons md-96"><a href="#post">expand_more</a></i>
+	
+		<img class="img_container" src="{{obj.image.url}}"></img>
 	</header>
 	<div class="post" id="post">
 		<!-- <h1> {{obj.title}}</h1> -->

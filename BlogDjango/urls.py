@@ -15,13 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from blog.views import widok, show_post, post_form
+from blog.views import post_list, show_post, post_form
 
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-	path('', widok, name='widok'),
+	path('', post_list),
 	path('post/<slug:slug>/', show_post),
 	path('postform/', post_form, name='post_form'),
     path('admin/', admin.site.urls),
