@@ -4,6 +4,7 @@
 <head>
 	<title>DemoBlog</title>
 	{% load static %} 
+	<link rel="stylesheet" href="{% static "styles/base_style.css" %}" title="Default Styles" media="screen" />
 	<link rel="stylesheet" href="{% static "styles/style.css" %}" title="Default Styles" media="screen" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -12,25 +13,99 @@
 </head>
 
 <body>
-	<div class="divNav">
+	<nav id="myNav">
 		<img src="{% static "image/logo_large.png" %}" alt="DemoBlog" > 
-		<div class=social-icons><i href="#" class="fa fa-facebook"></i></div>
-		<div class=social-icons><i href="#" class="fa fa-youtube"></i></div>
-		<div class=social-icons><i href="#" class="fa fa-instagram"></i></div>
-		<ul class="nav">
-	  		<li class="lineNav"><a class="aNav" href="#post">Strona Główna</a></li>
-	  		<li class="lineNav"><a class="aNav" href="#news">O filozofii</a></li>
-	 		<li class="lineNav"><a class="aNav" href="#contact">O programowaniu</a></li>
-	  		<li class="lineNav"><a class="aNav" href="#about">O mnie</a></li>
-	  		<li class="lineNav"><a class="aNav" href="#home">Szukaj</a></li>
+		<div class="icons">
+			<div class=social-icons><i href="#" class="fa fa-facebook"></i></div>
+			<div class=social-icons><i href="#" class="fa fa-youtube"></i></div>
+			<div class=social-icons><i href="#" class="fa fa-instagram"></i></div>
+		</div>
+		
+		<ul class="navBar">
+	  		<li class="option">
+	  			<a class="link" href="#post">Strona Główna</a>
+	  			<div class="line"></div>
+	  		</li>
+	  		<li class="option">
+	  			<a class="link" href="#news">O filozofii</a>
+	  			<div class="line"></div>
+	  		</li>
+	 		<li class="option">
+	 			<a class="link" href="#contact">O programowaniu</a>
+	 			<div class="line"></div>
+	 		</li>
+	  		<li class="option">
+	  			<a class="link" href="#about">O mnie</a>
+	  			<div class="line"></div>
+	  		</li>
+	  		<li class="option">
+	  			<a class="link" href="#home">Szukaj</a>
+	  			<div class="line"></div>
+	  		</li>
+	  		<li class="burger" id="icon-burger">
+	  			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    				<i class="fa fa-bars"></i>
+ 				</a>
+	  		</li>
+	  		
 		</ul>
+	</nav>
+	<div id="nav2" class="nav2">
+		
+		<ul class="navBar2">
+	  		<li class="option2">
+	  			<a class="link" href="#post">Strona Główna </a>
+	  			<div class="line"></div>
+	  		</li>
+	  		<li class="option2">
+	  			<a class="link" href="#news">O filozofii </a>
+	  			<div class="line"></div>
+	  		</li>
+	 		<li class="option2">
+	 			<a class="link" href="#contact">O programowaniu </a>
+	 			<div class="line"></div>
+	 		</li>
+	  		<li class="option2">
+	  			<a class="link" href="#about">O mnie </a>
+	  			<div class="line"></div>
+	  		</li>
+	  		<li class="option2">
+	  			<a class="link" href="#home">Szukaj </a>
+	  			<div class="line"></div>
+	  		</li>
+		</ul>
+		<div class="icons" id="icons">
+			<div class=social-icons><i href="#" class="fa fa-facebook"></i></div>
+			<div class=social-icons><i href="#" class="fa fa-youtube"></i></div>
+			<div class=social-icons><i href="#" class="fa fa-instagram"></i></div>
+		</div>
 	</div>
-	<!-- <header>
-		<br/>
-		<h1 id="quote"><span>Dwie rzeczy napełniają umysł coraz to nowym i wzmagającym się podziwem i czcią, im częściej i trwalej się nad nimi zastanawiamy: niebo gwiaździste nade mną i prawo moralne we mnie. </span></h1>
-	</header> -->
-	
-	
+	<script>
+	function myFunction() {
+	  var x = document.getElementById("myNav");
+	  if (x.className === "") {
+	    x.className += " responsive";
+	    document.getElementById("nav2").style.height="100%";
+	    document.getElementById("icons").style.display="flex";
+	    document.getElementById("nav2").style.animation="appear 0.5s forwards ";
+	    var el=document.getElementsByClassName("option2");
+	    for (var i=0;i<el.length; i++) {
+    		el[i].style.display="block";
+		}
+	    // document.getElementById("nav2").style.display="flex";
+	  } else {
+	    x.className = "";
+	    // document.getElementById("nav2").style.height="0px";
+	    // document.getElementById("nav2").style.display="none";
+	    document.getElementById("icons").style.display="none";
+	    document.getElementById("nav2").style.animation="disappear 0.2s forwards";
+	    var el=document.getElementsByClassName("option2");
+	    for (var i=0;i<el.length; i++) {
+    		el[i].style.display="none";
+		}
+	  }
+	}
+</script>
 	
 {% block content %}
 
