@@ -6,8 +6,7 @@ from .forms import PostForm
 def post_list(request,*args, **kwargs):
 	obj=Post.objects.all().order_by('-date');
 	kontekst={
-		'first_front_obj':obj[0],
-		'front_obj':obj[1:3],
+		'front_obj':obj[0:3],
 		'obj':obj[3:]
 	}
 	return render(request,'main.html',kontekst)

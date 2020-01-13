@@ -3,22 +3,6 @@
 {% block content %}
 	<div class="main_container">
 		<div class="front_main_posts">
-
-			<div class="first_front_main_post_frame">
-				<a href="post/{{first_front_obj.slug}}">
-					<!-- <div class="first_front_main_post"> -->
-						
-						<div id="front_main_post_title">
-							<h1>{{first_front_obj.title}}</h1>
-							<div id="front_main_post_time">
-								<p class="main_post_date">{{first_front_obj.date.year}},{{first_front_obj.date.month}},{{first_front_obj.date.day}}</p>
-							</div>
-						</div>
-						<img src="{{first_front_obj.image.url}}" ></img>
-					<!-- </div> -->
-				</a>
-			</div>
-
 			{% for i in front_obj %}
 			
 				<div class="front_main_post_frame">

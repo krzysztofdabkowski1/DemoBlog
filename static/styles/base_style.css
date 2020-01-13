@@ -4,10 +4,12 @@ body {
   padding: 0;
   width: 100vw;
   max-width: 100%;
-  font-family: 'Raleway',sans-serif;
+  /*font-family: 'Raleway',sans-serif;*/
+  overflow-x: hidden;
 }
 
 nav{
+	font-family: 'Poppins', sans-serif;
 	width: 100%;
 	height: 100px;
 	display: flex;
@@ -15,83 +17,62 @@ nav{
   	justify-content: flex-start;
   	background-color: #faf6e9;
   	border-top: 3px solid #494949;
-  	opacity: 0.7;
+  	/*opacity: 0.7;*/
  
 }
-.nav2{
-	/*display:relative;*/
-	display: flex;
-  	align-items: center;
-  	flex-direction: column;
-  	width: 100%;
-  	height: 0px;
-  	justify-content: center;
-  	/*animation-name: appear;*/
-  	/*animation-duration: 1s;*/
-  	/*animation-fill-mode: both;*/
-  	overflow: hidden;
-  	
+
+.nav-links{
+	width:100%;
+	height: 100%;
+	/*border: red solid 1px;*/
 }
-@keyframes appear {
-  from {height:0px;}
-  to {height:320px;}
-}
-@keyframes disappear {
-  from {height:250px;}
-  to {height:0px;}
-}
+
 nav img{
 	height: 175px;
 	margin-left: 30px;
 	margin-top: -26px;
-	position: absolute;
+	/*position: absolute;*/
+	/*border: red solid 1px;*/
+	opacity:0.8;
+}
+.burger{
+	display: none;
+	left:100vw;
+	cursor:pointer;
+}
+.burger div{
+	border-radius: 25%;
+	width:40px;
+	height: 5px;
+	background-color:#494949;
+	margin: 8px;
+	transition: all 0.3s ease;
+
 }
 
 .navBar {
   width: 100%;
-  height: 100%;
+  height: 50%;
   list-style-type: none;
-  /*position:fixed;*/
+  /*position:relative;*/
   top: 0px;
   left: 0px;
   margin: 0;
   padding: 0;
   /*overflow: hidden;*/
-  align-self: flex-end;
+  /*align-self: flex-end;*/
   /*border: 2px solid black;*/
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  z-index: -1;
 }
-.navBar2 {
-	width: 100%;
-	list-style-type: none;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	
-}
-.option2{
-	
-	display: none;
-	position: relative;
-	margin-bottom: 15px;
-  	white-space: nowrap;
-	left: 1000px;
-	animation: ease-in-out;
-  	animation-name: an;
-  	animation-duration: .4s;
-  	animation-fill-mode: forwards;
-}
+
+
 @keyframes an {
   from {left: 1000px;}
   to {left: 0px;}
 }
-.option2:nth-child(1) { animation-delay: 0s }
-.option2:nth-child(2) { animation-delay: .2s }
-.option2:nth-child(3) { animation-delay: .4s }
-.option2:nth-child(4) { animation-delay: .5s }
-.option2:nth-child(5) { animation-delay: .6s }
 
 .option {
   float: right;
@@ -102,6 +83,29 @@ nav img{
   white-space: nowrap;
   /*border: 2px solid black;*/
 }
+
+  	
+ .searchPanel{
+ 	margin-top: 10px;
+ 	left: 35%;
+ 	right: 5px;
+ 	height: 35px;
+ 	/*width:100%;*/
+ 	background-color: black;
+ 	opacity:0.5;
+ 	position: absolute;
+ 	z-index: 2;
+ 	transform:translateX(110%);
+ 	transition: transform 0.5s;
+ }
+.showSearchPanel{
+	transform:translateX(0%);
+}
+.searchClose{
+	height: 100%;
+	width:35px;
+	background-color: red;
+}
 .line{
 	position:relative;
 	width:0%;
@@ -110,7 +114,7 @@ nav img{
 	margin-left: 50%;
 }
 .link{
-	font-family: Monospace, sans-serif ;
+	/*font-family: Monospace, sans-serif ;*/
 	font-style: italic;
 	font-size: 20px;
 	height: 100%;
@@ -127,27 +131,33 @@ nav img{
  	margin-left: 0%;
 }
 .icons {
+	height:50%;
 	width: 200px;
-	display: none;
+	display: flex;
+	margin-left:70%;
+	/*right:10%;*/
 	justify-content: space-around;
+	/*border: 1px solid #494949;*/
 }
-nav>.icons{
+/*nav>.icons{
 	width: 200px;
 	position: relative;
     top:10px;
     left:80vw;
 	display: flex;
 	justify-content: space-around;
-}
+}*/
 .social-icons {
     /*color: #fff;*/
-    
+    margin-top: 10px;
     overflow:hidden;
     position: relative;
     /*top:10px;*/
     border: 1px solid #494949;
     border-radius: 50%;
     width: 37px;
+    height: 35px;
+    cursor: pointer;
 }
 .fa-facebook {
 	/*border-radius: 100%;*/
@@ -157,8 +167,8 @@ nav>.icons{
     -moz-transition:.5s;
     -webkit-transition:.5s;
     transition: .5s;
-    background-color: #faf6e9;
-    color: #494949;
+    /*background-color: #faf6e9;*/
+    /*color: #494949;*/
     text-decoration-style: solid;
 }
 .fa-facebook:hover {
@@ -174,79 +184,174 @@ nav>.icons{
     -moz-transition:.5s;
     -webkit-transition:.5s;
     transition: .5s;
-    background-color: #faf6e9;
+    /*background-color: #faf6e9;*/
 }
 .fa-youtube:hover {
     background-color: #e64a41;
-}
-.fa-instagram {
-	/*border-radius: 100%;*/
-    padding:10px 12px;
-    -o-transition:.5s;
-    -ms-transition:.5s;
-    -moz-transition:.5s;
-    -webkit-transition:.5s;
-    
-    background-color: #faf6e9;
-    transition:.5s;
-    text-decoration-style: solid;
-}
-.fa-instagram:hover {
-	/*width: 9px;*/
-	/*border-radius: 100%;*/
-    background: linear-gradient( #400080, transparent),linear-gradient( 200deg, #d047d1, #ff0000, #ffff00);
     color: white;
     border: 3px;
 }
-
-
-.fa-bars{
-	color:#494949;
+.fa-instagram {
+	color: black;
+	opacity: 1;
+	z-index: 1;
+	position: absolute;
+	top:0;
+	/*border-radius: 100%;*/
+    padding:10px 12px;
+    /*background-color: #faf6e9;*/
+    transition:.5s;
+    text-decoration-style: solid;
 }
+.instagram_frame{
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	opacity:0;
+	background: linear-gradient( #400080, transparent),linear-gradient( 200deg, #d047d1, #ff0000, #ffff00);
+	transition:.5s ease;
+	border-radius: 50%;
+}
+.fa-instagram:hover +.instagram_frame{
+	/*width: 9px;*/
+	/*border-radius: 100%;*/
+	opacity:1;
+    
+    color: white;
+    border: 3px;
+}
+.fa-instagram:hover{
+	color: white;
+    border: 3px;
+}
+.fa{
+  	background-color: rgba(0,0,0,0);
+  }
+
+
 nav .icon {
 	font-size:40px;
     display: none;
 }
 /*.Nav2{display: none;}*/
 
-@media screen and (max-width: 600px) {
-  nav a {display: none;}
-  nav div {display: none;}
-  .navBar{
+@media screen and (max-width: 1050px) {
+	.link{
+		font-size: 19px;
+		letter-spacing: 0.5px;
+	}
+	.option {
+  		margin-right:20px;
+	}
+	.icons {
+		/*margin-left: 69%;*/
+		margin-left: 60%;
+	}
+}
+@media screen and (max-width: 950px) {
+	.link{
+		font-size: 18px;
+		letter-spacing: 0.1px;
+	}
+	.option {
+  		margin-right:19px;
+	}
+	.icons {
+		/*margin-left: 67%;*/
+		margin-left: 50%;
+	}
+	nav img{
+		margin-left: 20px;
+	}
+}
+@media screen and (max-width: 900px) {
+	.link{
+		font-size: 18px;
+		letter-spacing: 0.1px;
+	}
+	.option {
+  		margin-right:19px;
+	}
+	.icons {
+		/*margin-left: 67%;*/
+		margin-left: 49%;
+	}
+	nav img{
+		margin-left: 10px;
+	}
+}
+
+@media screen and (max-width: 875px) {
+  /*nav a {display: none;}*/
+  /*nav div {display: none;}*/
+  /*.navBar{
   	display:flex;
   	align-items: center;
   	margin-right: 7%;
+  }*/
+  body{
+  	overflow-x: hidden;
   }
   nav a.icon {
     float: right;
     display: block;
   }
-}
-@media screen and (min-width: 600px) {
-  .nav2{
-  	display: none;
-  	height: 0px;
-  }
-}
-/*@media screen and (max-width: 600px) {
-  nav.responsive {
-  	position: relative;
+  .nav-links{
+  	position:absolute;
+  	right: 0px;
+  	height: 555px;
+  	top:102px;
+  	display: flex;
+  	flex-direction: column;
+  	/*z-index: 1;*/
+  	/*background-color: white;*/
+  	transform: translateX(100%);
+  	transition: transform 0.5s;
+  	background-color: rgba(0,0,0,.85);
   	
   }
   .navBar{
-  	display:flex;
+  	height:55%;
+  	padding-top: 20px;
+  	display: flex;
+  	flex-direction: column;
   	align-items: center;
-  	margin-right: 7%;
   }
-
-  nav.responsive a {
-    display: block;
-    text-align: left;
+  .link{
+  	color:white;
 
   }
-
-}*/
-
+  .option{
+  	margin: 20px;
+  }
+  .icons {
+	height:10%;
+	width: 200px;
+	display: flex;
+	align-self: center;
+	margin-left:0%;
+	/*right:10%;*/
+  }
+  .social-icons {
+    color: rgb(200,200,200);
+    border: 1px solid  rgb(200,200,200);
+    transition: 0.5s;
+  }
+  .fa-instagram{
+  	color: rgb(200,200,200);
+  }
+  .burger{
+	display: block;
+	margin:30px;
+  }
+  nav{
+  	justify-content: space-around;
+  }
+  
+}
+.nav-appear{
+	transform: translateX(0%);
+}
 
 
 footer{
@@ -263,4 +368,33 @@ footer{
 	background-position: center;
 	opacity: 0.3;
 	/*background-color: #494949;*/
+}
+
+@keyframes delayAnimation{
+	from{
+		opacity:0.5;
+		transform: translateX(50px);
+	}
+	to{
+		opacity: 1.5;
+		transform: translateX(-55px);
+	}
+}
+
+.toggle .line1{
+	transform: rotate(45deg) translate(6px,12px);
+	width:42px;
+}
+.toggle .line2{
+	opacity:0;
+	transform: rotate(-45deg) translate(-6px,0px);
+}
+.toggle .line3{
+	transform: rotate(-45deg) translate(6px,-12px);
+	width:42px;
+}
+
+.resize-animation-stopper * {
+  animation: none !important;
+  transition: none !important;
 }
