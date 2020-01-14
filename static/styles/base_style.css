@@ -86,8 +86,8 @@ nav img{
 
   	
  .searchPanel{
- 	margin-top: 10px;
- 	left: 35%;
+ 	margin-top: 60px;
+ 	left: 55%;
  	right: 5px;
  	height: 35px;
  	/*width:100%;*/
@@ -102,9 +102,16 @@ nav img{
 	transform:translateX(0%);
 }
 .searchClose{
+	cursor: pointer;
+	position: relative;
+	left:-15px;
+	border-radius: 50%;
 	height: 100%;
 	width:35px;
 	background-color: red;
+}
+.searchClose i{
+	padding: 5px;
 }
 .line{
 	position:relative;

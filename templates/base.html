@@ -14,54 +14,68 @@
 </head>
 
 <body>
-	<nav class="topnav">
-		<img src="{% static "image/logo_large.png" %}" alt="DemoBlog" >
-		<div class="burger" >
-			<div class="line1"></div>
-		  	<div class="line2"></div>
-		  	<div class="line3"></div>
-		  </div> 
-		<div class="nav-links">
-			<div class="icons">
-				<div class=social-icons><i href="#" class="fa fa-facebook"></i></div>
-				<div class=social-icons><i href="#" class="fa fa-youtube"></i></div>
-				<div class=social-icons>
-					<i href="#" class="fa fa-instagram"></i>
-					<div class="instagram_frame" ></div>
-
+	<div class="searchPanel">
+				<div class="searchClose">
+					<i class="material-icons">close</i>
 				</div>
 			</div>
-			<div class="searchPanel">
-				<button class="searchClose">X</button>
-			</div>
-			<ul class="navBar">
-		  		<li class="option">
-		  			<a class="link" href="#post">Strona Główna</a>
-		  			<div class="line"></div>
-		  		</li>
-		  		<li class="option">
-		  			<a class="link" href="#news">O filozofii</a>
-		  			<div class="line"></div>
-		  		</li>
-		 		<li class="option">
-		 			<a class="link" href="#contact">O programowaniu</a>
-		 			<div class="line"></div>
-		 		</li>
-		  		<li class="option">
-		  			<a class="link" href="#about">O mnie</a>
-		  			<div class="line"></div>
-		  		</li>
-		  		<li class="option" id="search">
-		  			<a class="link" href="#home" >Szukaj</a>
-		  			<div class="line"></div>
-		  		</li>
-		  	
-		  		
-			</ul>
+	<main>		
+		<nav class="topnav">
+			<img src="{% static "image/logo_large.png" %}" alt="DemoBlog" >
+			<div class="burger" >
+				<div class="line1"></div>
+			  	<div class="line2"></div>
+			  	<div class="line3"></div>
+			  </div> 
+			<div class="nav-links">
+				<div class="icons">
+					<div class=social-icons><i href="#" class="fa fa-facebook"></i></div>
+					<div class=social-icons><i href="#" class="fa fa-youtube"></i></div>
+					<div class=social-icons>
+						<i href="#" class="fa fa-instagram"></i>
+						<div class="instagram_frame" ></div>
 
-		</div>
-	</nav>
-	
+					</div>
+				</div>
+				
+				<ul class="navBar">
+			  		<li class="option">
+			  			<a class="link" href="#post">Strona Główna</a>
+			  			<div class="line"></div>
+			  		</li>
+			  		<li class="option">
+			  			<a class="link" href="#news">O filozofii</a>
+			  			<div class="line"></div>
+			  		</li>
+			 		<li class="option">
+			 			<a class="link" href="#contact">O programowaniu</a>
+			 			<div class="line"></div>
+			 		</li>
+			  		<li class="option">
+			  			<a class="link" href="#about">O mnie</a>
+			  			<div class="line"></div>
+			  		</li>
+			  		<li class="option" id="search">
+			  			<a class="link" href="#home" >Szukaj</a>
+			  			<div class="line"></div>
+			  		</li>
+			  	
+			  		
+				</ul>
+
+			</div>
+		</nav>
+		{% block content %}
+
+				replace it 
+		{% endblock %}
+		<footer>
+			<div class="footer_image" id="foot">
+				
+			</div>
+		</footer>
+	</main>
+</body>
 <script>
 	let resizeTimer;
 	window.addEventListener("resize", () => {
@@ -109,7 +123,7 @@
 			option.forEach((opt,index)=>{
 				opt.style.display='initial';
 			});
-			document.querySelector('.searchPanel').classList.toggle('showSearchPanel');
+			document.querySelector('.searchPanel').classList.remove('showSearchPanel');
 		}
 		
 	}
@@ -121,27 +135,21 @@
 			opt.style.display='none';
 		});
 		searchPanel.classList.toggle('showSearchPanel');
+		// document.querySelector('nav').addEventListener('click')
 	}
 	document.querySelector('#search').addEventListener('click',searchClicked);
 	document.querySelector('.searchClose').addEventListener('click',offClick);
-
+	document.querySelector('main').addEventListener('click',offClick);
 
 	navAnimation();
 
-
-
+	let nav=document.querySelector('nav');
+	let whereisit=()=> {
+		if(window.scrollY>=658 ){ //value calculated from height of nav and headers image
+			nav.style.position="fixed";
+			nav.style.transition="0.5s ease";
+		}
+	}
+	addEventListener('wheel',whereisit);
 </script>
-	
-{% block content %}
-
-		replace it 
-{% endblock %}
-	<footer>
-		<div class="footer_image" id="foot">
-			
-		</div>
-	</footer>
-
-</body>
-
 </html>
